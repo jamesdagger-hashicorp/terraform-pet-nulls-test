@@ -1,22 +1,29 @@
-## Place all your terraform resources here
-#  Locals at the top (if you are using them)
-#  Data blocks next to resources that are referencing them
-#  Reduce hard coded inputs where possible. They are used below for simplicity to show structure
-
-/* local {
-  # Local that is a map that is used for something
-  example-local {
-    key = value
+resource "random_pet" "this" {
+  prefix = var.prefix
+  length = 200
+  
+  keepers = {
+    timestamp = timestamp()
   }
 }
 
-data "vault_auth_backend" "kubernetes" {
-  namespace = var.namespace
-  path      = "kubernetes"
+resource "time_sleep" "wait_30_seconds" {
+  create_duration = "30s"
+
+  triggers = {
+    # This will change whenever the pet changes, causing the sleep to occur
+    pet_id = random_pet.this.id
+  }
 }
 
-resource "vault_policy" "policies" {
-  namespace = var.namespace
-  name      = "name"
-  policy    = "policy"
-} */
+resource "null_resource" "this" {
+  count = var.instances
+  depends_on = [time_sleep.wait_30_seconds]
+
+  triggers = {
+    pet = random_pet.this.id
+  }
+}
+
+
+

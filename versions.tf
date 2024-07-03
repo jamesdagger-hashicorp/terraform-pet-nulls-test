@@ -1,14 +1,14 @@
-## Place your Terraform Args / Provider version args here
-/* terraform {
-  required_version = ">=1.3.0"
+terraform {
   required_providers {
-    vault = {
-      source  = "hashicorp/vault"
-      version = "~> 3.11.0"
+    null = {
+      source  = "hashicorp/null"
+      version = "~> 3.2.2"
     }
+
     random = {
       source  = "hashicorp/random"
-      version = "~>3.4.3"
+      version = "~> 3.5.1"
     }
+
   }
-} */
+}

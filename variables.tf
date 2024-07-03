@@ -1,7 +1,11 @@
 ## Variables file
 
-/* variable "namespace" {
-  description = "(Optional) - Namespace that will be used for the configuration"
-  type        = string
-  default     = null
-} */
+variable "prefix" {
+  type    = string
+  default = "simple"
+}
+
+variable "instances" {
+  type    = number
+  default = 3
+}
