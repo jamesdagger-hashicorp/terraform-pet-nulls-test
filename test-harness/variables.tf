@@ -15,3 +15,9 @@ variable "workspace_count" {
 variable "oauth_token_id" {
   type = string
 }
+
+variable "token" {
+  type = string
+  sensitive = true
+  #populate from cli var
+}
