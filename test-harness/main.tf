@@ -7,6 +7,7 @@ resource "tfe_workspace" "workspaces" {
   organization   = var.tfe_organization
   queue_all_runs = true
   auto_apply     = true
+  force_delete   = true
   vcs_repo {
     branch         = "main"
     identifier     = "hashi-demo-lab/pet-nulls-test"

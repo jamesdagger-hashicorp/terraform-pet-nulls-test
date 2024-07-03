@@ -10,7 +10,6 @@ variable "tfe_organization" {
 
 variable "workspace_count" {
   type    = number
-  default = 100
 }
 
 variable "oauth_token_id" {
