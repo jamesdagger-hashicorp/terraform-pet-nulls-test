@@ -18,7 +18,7 @@ module "project_oidc_aws" {
   oidc_provider_client_id_list = [var.tfc_aws_audience]
   tfc_organization_name        = "apj"
   cred_type                    = "project"
-  tfc_project_name             = ""
+  tfc_project_name             = "Default Project"
   tfc_project_id               = var.tfe_project_id
 
 }
