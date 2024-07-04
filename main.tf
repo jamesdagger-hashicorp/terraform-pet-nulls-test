@@ -31,17 +31,15 @@ resource "null_resource" "this" {
 
 # query for eks clusters
 data "aws_eks_clusters" "a" {
-  provider = aws.a
 }
 
 # Query AWS Caller Identity reion a
 data "aws_caller_identity" "a" {
-  provider = aws.a
 }
 
 # Query AWS Caller Identity region b
-data "aws_caller_identity" "b" {
-  provider = aws.b
+/* data "aws_caller_identity" "b" {
+ # provider = aws.b
 }
-
+ */
 

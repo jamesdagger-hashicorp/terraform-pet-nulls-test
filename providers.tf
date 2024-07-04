@@ -9,11 +9,5 @@
 
 provider "aws" {
   region = "ap-southeast-2"
-  alias  = "a"
 }
 
-# Configure the AWS provider for the second region
-provider "aws" {
-  region = "ap-southeast-1"
-  alias  = "b"
-}

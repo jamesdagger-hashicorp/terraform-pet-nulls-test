@@ -39,6 +39,6 @@ This configuration is specifically designed for testing purposes and does not cr
 
 ```
  doormat login -f && eval $(doormat aws export --account ${DOORMAT_AWS_USER})
- VARSET=varset-13beCs4PebkZcfRV
+ VARSET=varset-Rr8e7o7Larik2Neb
  doormat aws tf-push variable-set --hostname tfe.simon-lynch.sbx.hashidemos.io --organization apj --id $VARSET --role arn:aws:iam::855831148133:role/aws_simon.lynch_test-developer
 ```
