@@ -9,15 +9,22 @@ variable "tfe_organization" {
 }
 
 variable "workspace_count" {
-  type    = number
+  type = number
+}
+
+variable "oauth_token" {
+  type    = string
+  default = null
 }
 
 variable "oauth_token_id" {
-  type = string
+  type    = string
+  default = null
 }
 
 variable "token" {
-  type = string
+  type      = string
   sensitive = true
+  default   = null
   #populate from cli var
 }
