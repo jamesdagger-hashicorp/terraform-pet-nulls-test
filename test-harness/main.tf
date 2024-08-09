@@ -7,12 +7,6 @@ resource "tfe_oauth_client" "default" {
   service_provider = "github"
 }
 
-# data "tfe_oauth_client" "default" {
-#   count           = var.oauth_token_id != null ? 1 : 0
-#   organization    = var.tfe_organization
-#   service_provider = "github"
-# }
-
 locals {
   oauth_token_id = var.oauth_token_id == null ? tfe_oauth_client.default[0].oauth_token_id : var.oauth_token_id
 }
