@@ -8,7 +8,7 @@ resource "random_pet" "this" {
 }
 
 resource "time_sleep" "wait_30_seconds" {
-  create_duration = "5m"
+  create_duration = "3m"
 
   triggers = {
     # This will change whenever the pet changes, causing the sleep to occur
@@ -25,7 +25,7 @@ resource "null_resource" "this" {
   }
 }
 
-# This is to add some memorty load - 2 instances of AWS to different regions 
+# This is to add some memory load - 2 instances of AWS to different regions
 # and datasource output to increase returned run payload.
 # We don't actually want to provision resources as its a mess to clean up broken runs.
 
