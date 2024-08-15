@@ -18,7 +18,7 @@ resource "time_sleep" "wait" {
 
 resource "null_resource" "this" {
   count      = var.instances
-  depends_on = [time_sleep.wait_30_seconds]
+  depends_on = [time_sleep.wait]
 
   triggers = {
     pet = random_pet.this.id
