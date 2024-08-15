@@ -1,3 +1,9 @@
+# data "tfe_oauth_client" "default" {
+#   count            = var.oauth_token_id != null ? 1 : 0
+#   organization = var.tfe_organization
+#   service_provider = "github"
+# }
+
 resource "tfe_oauth_client" "default" {
   count            = var.oauth_token_id == null ? 1 : 0
   organization     = var.tfe_organization
@@ -28,5 +34,6 @@ resource "tfe_workspace" "workspaces" {
     branch         = "main"
     identifier     = "nhsy-hcp/terraform-pet-nulls-test"
     oauth_token_id = local.oauth_token_id
+
   }
 }
