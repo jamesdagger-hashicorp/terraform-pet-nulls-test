@@ -8,7 +8,7 @@ resource "random_pet" "this" {
 }
 
 resource "time_sleep" "wait" {
-  create_duration = "30s"
+  create_duration = "3m"
 
   triggers = {
     # This will change whenever the pet changes, causing the sleep to occur
