@@ -1,6 +1,6 @@
 resource "random_pet" "this" {
   prefix = var.prefix
-  length = 200
+  length = 10
 
   keepers = {
     timestamp = timestamp()
@@ -16,14 +16,14 @@ resource "time_sleep" "wait" {
   }
 }
 
-resource "null_resource" "this" {
-  count      = var.instances
-  depends_on = [time_sleep.wait]
-
-  triggers = {
-    pet = random_pet.this.id
-  }
-}
+# resource "null_resource" "this" {
+#   count      = var.instances
+#   depends_on = [time_sleep.wait]
+#
+#   triggers = {
+#     pet = random_pet.this.id
+#   }
+# }
 
 # This is to add some memory load - 2 instances of AWS to different regions
 # and datasource output to increase returned run payload.
