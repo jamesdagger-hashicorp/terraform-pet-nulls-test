@@ -5,7 +5,3 @@ output "name" {
 output "ids" {
   value = [for n in null_resource.this : n.id]
 }
-
-output  "gcp_project_number" {
-  value = data.google_project.project.number
-}
