@@ -10,6 +10,6 @@ variable "instances" {
   default = 3
 }
 
-variable "gcp_project_id" {
+variable "project_id" {
   type    = string
 }
