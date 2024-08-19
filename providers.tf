@@ -11,3 +11,7 @@
 #   region = "ap-southeast-2"
 # }
 
+provider "google" {
+  project = var.gcp_project_id
+  region = "us-central1"
+}
