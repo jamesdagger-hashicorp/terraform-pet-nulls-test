@@ -11,5 +11,7 @@ variable "instances" {
 }
 
 variable "project_id" {
+  description = "The project ID to deploy resources into"
+  default     = null
   type    = string
 }
