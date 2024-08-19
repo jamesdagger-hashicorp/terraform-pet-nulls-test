@@ -50,15 +50,9 @@ resource "google_iam_workload_identity_pool_provider" "tfe" {
   }
   oidc {
     issuer_uri = "https://${var.tfe_hostname}"
-    # The default audience format used by TFC is of the form:
-    # //iam.googleapis.com/projects/{project number}/locations/global/workloadIdentityPools/{pool ID}/providers/{provider ID}
-    # which matches with the default accepted audience format on GCP.
-    #
-    # Uncomment the line below if you are specifying a custom value for the audience instead of using the default audience.
-    # allowed_audiences = [var.tfc_gcp_audience]
   }
   #   attribute_condition = "assertion.sub.startsWith(\"organization:${var.tfe_organization_name}:project:${var.tfe_project_name}:workspace:${var.tfe_workspace_name}\")"
-  attribute_condition = "assertion.sub.startsWith(\"organization:${var.tfe_organization_name}:project:${var.tfe_project_name}\")"
+  attribute_condition = "assertion.sub.startsWith(\"organization:${var.tfe_organization_name}:project:${var.tfe_project_name}:\")"
 
   lifecycle {
     prevent_destroy = true
